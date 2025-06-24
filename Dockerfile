@@ -13,6 +13,11 @@ RUN npm install
 # 소스 코드 복사
 COPY . .
 
+# 빌드 시점에 환경변수 설정
+ARG NEXT_PUBLIC_GITHUB_USERNAME
+ENV NEXT_PUBLIC_GITHUB_USERNAME=$NEXT_PUBLIC_GITHUB_USERNAME
+
+
 # Next.js 애플리케이션 빌드
 RUN npm run build
 
